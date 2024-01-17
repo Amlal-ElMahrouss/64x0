@@ -2,3 +2,6 @@
 *.vcd
 *.fst
 *.fst.hier
+*.lck
+64x0-backups/
+fp-info-cache
