@@ -1,0 +1,11 @@
+; (c) Mahrouss Logic, all rights reserved.
+
+; zero out the r2 register.
+mv r2, r0
+
+; jump to return register value '0x100000'
+lda r19, 0x100000
+jrl ; jump to linked register (r19)
+
+; store return value of r19
+mv r2, r19
