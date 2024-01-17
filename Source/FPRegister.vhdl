@@ -12,6 +12,7 @@ entity FPRegister is
         cpu_ingoing_mantissa : in std_logic_vector(57 downto 0) := (others => '0');
         cpu_ingoing_exponent : in std_logic_vector(27 downto 0) := (others => '0');
         cpu_ingoing_sign : in std_logic := '0';
+        cpu_ingoing_ident : in natural := 0;
         cpu_incoming_clk : in std_logic := '1'
     );
 
@@ -24,16 +25,24 @@ architecture FPRegisterArch of FPRegister is
     signal signal_mantissa : std_logic_vector(57 downto 0) := (others => '0');
     signal signal_exponent : std_logic_vector(27 downto 0) := (others => '0');
     signal signal_sign : std_logic := '0';
+    signal signal_reset : std_logic := '1';
+    signal signal_ident : natural := 0;
 
 begin
     
     FPRegisterPro : process
     begin
-        signal_mantissa <= cpu_ingoing_mantissa;
-        signal_exponent <= cpu_ingoing_exponent;
-        signal_sign <= cpu_ingoing_sign;
+        if (signal_reset = '1') then
+            signal_ident <= cpu_ingoing_ident;
+        end if;
 
-        report "GP: DATA: " & to_hstring(signal_exponent) & "." & to_hstring(signal_mantissa);
+        if (cpu_ingoing_ident = signal_ident) then
+            signal_mantissa <= cpu_ingoing_mantissa;
+            signal_exponent <= cpu_ingoing_exponent;
+            signal_sign <= cpu_ingoing_sign;
+
+            report "GP: DATA: " & to_hstring(signal_exponent) & "." & to_hstring(signal_mantissa);
+        end if;
 
         wait on cpu_incoming_clk;
     end process ; -- FPRegisterPro

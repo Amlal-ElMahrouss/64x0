@@ -1,5 +1,5 @@
 -- ( (c) El Mahrouss Logic 2024, all rights reserved. )
--- ( This file handles the Hardware Thread Unit. )
+-- ( This file handles the Hardware Thread register. )
 
 library IEEE;
 

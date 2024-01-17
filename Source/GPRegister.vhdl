@@ -10,6 +10,7 @@ entity GPRegister is
 
     port(
         cpu_ingoing_data : in std_logic_vector(127 downto 0) := (others => '0');
+        cpu_ingoing_ident : in natural := 0;
         cpu_incoming_clk : in std_logic := '1'
     );
 
@@ -20,14 +21,22 @@ architecture GPRegisterArch of GPRegister is
 
     -- Standard IRQ
     signal signal_data : std_logic_vector(127 downto 0) := (others => '0');
+    signal signal_reset : std_logic := '1';
+    signal signal_ident : natural := 0;
 
 begin
     
     GPRegisterPro : process
     begin
-        signal_data <= cpu_ingoing_data;
+        if (signal_reset = '1') then
+            signal_ident <= cpu_ingoing_ident;
+        end if;
 
-        report "GP: DATA: " & to_hstring(signal_data);
+        if (cpu_ingoing_ident = signal_ident) then
+            signal_data <= cpu_ingoing_data;
+
+            report "GP: DATA: " & to_hstring(signal_data);
+        end if;
 
         wait on cpu_incoming_clk;
     end process ; -- GPRegisterPro

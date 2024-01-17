@@ -28,7 +28,7 @@ architecture InterruptRegisterArch of InterruptRegister is
     -- NMI irq
     signal signal_nmi_irq : std_logic_vector(7 downto 0) := (others => '0');
 
-    signal cpu_ivt_ip : std_logic_vector(57 downto 0) := (others => '0');
+    signal signal_ivt_ip : std_logic_vector(57 downto 0) := (others => '0');
 
 begin
     
@@ -37,7 +37,7 @@ begin
         signal_irq <= cpu_incoming_irq;
         signal_nmi_irq <= cpu_incoming_nmi;
 
-        cpu_outgoing_ip <= cpu_ivt_ip;
+        cpu_outgoing_ip <= signal_ivt_ip;
 
         report "IR: IRQ: " & to_hstring(signal_irq);
 
