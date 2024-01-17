@@ -1,7 +1,7 @@
 # If you don't need to patch ghdl, use export ghdlp=ghdl
 # Use ghdl -r module, to simulate.
 
-VHDL_SRC=InterruptUnit.vhdl HardwareThread.vhdl
+VHDL_SRC=FPRegister.vhdl GPRegister.vhdl InterruptRegister.vhdl ThreadRegister.vhdl
 VHDL_FLAG=-a --std=08
 VHDL_CC=$(ghdlp)
 

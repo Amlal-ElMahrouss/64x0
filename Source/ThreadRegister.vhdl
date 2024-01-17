@@ -6,7 +6,7 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use std.textio.all;
 
-entity HardwareThread is
+entity ThreadRegister is
 
     port(
 
@@ -16,9 +16,9 @@ entity HardwareThread is
 
     );
 
-end HardwareThread;
+end ThreadRegister;
 
-architecture HardwareThreadArch of HardwareThread is
+architecture ThreadRegisterArch of ThreadRegister is
 
     signal cpu_signal_reset : std_logic := '1';
 
@@ -27,7 +27,7 @@ architecture HardwareThreadArch of HardwareThread is
     
 begin
 
-    HardwareThreadPro : process
+    ThreadRegisterPro : process
     begin
         cpu_signal_ip <= cpu_incoming_ip;
 
@@ -35,9 +35,9 @@ begin
             cpu_signal_ip <= cpu_signal_reset_ip;
         end if ;
 
-        report "HT: STEP";
+        report "TR: " & to_hstring(cpu_signal_ip);
 
         wait on cpu_incoming_clk_signal;
-    end process; -- HardwareThreadPro
+    end process; -- ThreadRegisterPro
 
-end HardwareThreadArch; -- HardwareThread
+end ThreadRegisterArch; -- ThreadRegister
