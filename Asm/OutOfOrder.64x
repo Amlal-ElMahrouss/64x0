@@ -7,5 +7,6 @@ mv r2, r0
 lda r19, 0x100000
 jrl ; jump to linked register (r19)
 
+; expected: mv r2, r0 should get there.
 ; store return value of r19
 mv r2, r19
