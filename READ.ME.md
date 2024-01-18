@@ -1,4 +1,4 @@
-# ElMahroussLogic X64000
+# El Mahrouss Logic X64000
 ## 128-bit CPU.
 
 <br>

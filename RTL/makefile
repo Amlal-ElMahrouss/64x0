@@ -12,4 +12,4 @@ all-vhdl:
 	$(VHDL_CC) $(VHDL_FLAG) GPRegisterBank.vhdl
 	$(VHDL_CC) $(VHDL_FLAG) InterruptRegister.vhdl
 	$(VHDL_CC) $(VHDL_FLAG) ThreadRegister.vhdl
-	$(VHDL_CC) $(VHDL_FLAG) Clock.vhdl
+	$(VHDL_CC) $(VHDL_FLAG) ClockCircuit.vhdl

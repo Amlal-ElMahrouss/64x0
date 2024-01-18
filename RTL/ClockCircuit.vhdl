@@ -5,13 +5,13 @@ LIBRARY IEEE;
 
 USE IEEE.std_logic_1164.ALL;
 
-ENTITY Clock IS
+ENTITY ClockCircuit IS
   PORT (
     outgoing_cpu_clk : OUT STD_LOGIC
   );
-END Clock;
+END ClockCircuit;
 
-ARCHITECTURE ClockArch OF Clock IS
+ARCHITECTURE ClockArch OF ClockCircuit IS
 
   SIGNAL cpu_clk : STD_LOGIC := '0';
 
@@ -25,6 +25,8 @@ BEGIN
 
     IF (cpu_clk = '1') THEN
       REPORT "CLK: RISE";
+    ELSE
+      REPORT "CLK: DOWN";
     END IF;
   END PROCESS; -- ClockPro
 

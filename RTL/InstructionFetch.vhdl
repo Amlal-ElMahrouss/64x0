@@ -8,7 +8,7 @@ USE IEEE.std_logic_1164.ALL;
 ENTITY InstructionFetch IS
 	PORT (
 		cpu_clk : IN STD_LOGIC := '0';
-		cpu_data : IN STD_LOGIC_VECTOR(127 DOWNTO 0) := (OTHERS => '0');
+		cpu_data : IN STD_LOGIC_VECTOR(57 DOWNTO 0) := (OTHERS => '0');
 		cpu_opcode : OUT STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
 		cpu_funct3 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
 		cpu_funct7 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0')
