@@ -24,9 +24,9 @@ BEGIN
     outgoing_cpu_clk <= cpu_clk;
 
     IF (cpu_clk = '1') THEN
-      REPORT "CLK: RISE";
+      REPORT "HT: RISE";
     ELSE
-      REPORT "CLK: DOWN";
+      REPORT "HT: DOWN";
     END IF;
   END PROCESS; -- ClockPro
 

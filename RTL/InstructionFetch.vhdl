@@ -6,30 +6,28 @@ LIBRARY IEEE;
 USE IEEE.std_logic_1164.ALL;
 
 ENTITY InstructionFetch IS
-	PORT (
-		cpu_clk : IN STD_LOGIC := '0';
-		cpu_data : IN STD_LOGIC_VECTOR(57 DOWNTO 0) := (OTHERS => '0');
-		cpu_opcode : OUT STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
-		cpu_funct3 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
-		cpu_funct7 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0')
-	);
+    PORT (
+		cpu_data : IN STD_LOGIC_VECTOR(127 DOWNTO 0) := (OTHERS => '0')
+    );
 END InstructionFetch;
 
 ARCHITECTURE InstructionFetchArch OF InstructionFetch IS
+
+    SIGNAL cpu_clk_s : STD_LOGIC := '0';
+    SIGNAL cpu_opcode_s : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL cpu_funct3_s : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL cpu_funct7_s : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
+
 BEGIN
 
-	InstructionFetchPro : PROCESS
-	BEGIN
-		cpu_opcode <= cpu_data(0) & cpu_data(1) & cpu_data(2) & cpu_data(3) & cpu_data(4) &
-			cpu_data(5) & cpu_data(6) & cpu_data(7);
+    HW_CLK_STAGE : ENTITY work.ClockCircuit PORT MAP(outgoing_cpu_clk=>cpu_clk_s);
 
-		cpu_funct3 <= cpu_data(8) & cpu_data(9) & cpu_data(10) & cpu_data(11) & cpu_data(12) &
-			cpu_data(13) & cpu_data(14) & cpu_data(15);
+    HW_FETCH_STAGE : ENTITY work.InstructionDecode PORT MAP(
+        cpu_clk=>cpu_clk_s,
+        cpu_data=>cpu_data,
+        cpu_opcode=>cpu_opcode_s,
+        cpu_funct3=>cpu_funct3_s,
+        cpu_funct7=>cpu_funct7_s
+    );
 
-		cpu_funct7 <= cpu_data(16) & cpu_data(17) & cpu_data(18) & cpu_data(19) & cpu_data(20) &
-			cpu_data(21) & cpu_data(22) & cpu_data(23);
-
-		WAIT ON cpu_clk;
-	END PROCESS; -- InstructionFetchPro
-
-END InstructionFetchArch; -- InstructionFetchArch
+END InstructionFetchArch;

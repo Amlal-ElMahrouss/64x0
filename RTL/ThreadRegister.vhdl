@@ -35,7 +35,7 @@ BEGIN
             cpu_signal_ip <= cpu_signal_reset_ip;
         END IF;
 
-        REPORT "TR: " & to_hstring(cpu_signal_ip);
+        REPORT "HT: " & to_hstring(cpu_signal_ip);
 
         WAIT ON cpu_incoming_clk_signal;
     END PROCESS; -- ThreadRegisterPro

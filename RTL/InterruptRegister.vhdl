@@ -39,7 +39,7 @@ BEGIN
 
         cpu_outgoing_ip <= signal_ivt_ip;
 
-        REPORT "IR: IRQ: " & to_hstring(signal_irq);
+        REPORT "HT: IRQ: " & to_hstring(signal_irq);
 
         WAIT ON cpu_incoming_clk;
     END PROCESS; -- InterruptRegisterPro
