@@ -1,7 +1,7 @@
 # If you don't need to patch ghdl, use export ghdlp=ghdl
 # Use ghdl -r module, to simulate.
 
-VHDL_FLAG=-a --work=CPU --std=08
+VHDL_FLAG=-a --work=RTL --std=08
 VHDL_CC=$(ghdlp)
 
 .PHONY: all-vhdl
