@@ -15,9 +15,9 @@ END GPRegisterBank;
 
 ARCHITECTURE GPRegisterBankArch OF GPRegisterBank IS
 
-  SIGNAL cpu_reset : STD_LOGIC := '1';
-
 BEGIN
+
+  -- gp registers entities
 
   HW_R0 : ENTITY work.GPRegister PORT MAP(
     cpu_ingoing_data => cpu_register_data,
@@ -138,14 +138,5 @@ BEGIN
     cpu_ingoing_id=>cpu_register_select,
     cpu_incoming_clk => cpu_clk);
     
-  GPRegisterBankLogic : PROCESS
-  BEGIN
-    IF (cpu_reset = '1') THEN
-      REPORT "GPRB: RESET";
-      cpu_reset <= '0';
-    END IF;
-
-    WAIT ON cpu_clk;
-  END PROCESS; -- GPRegisterBankLogic
 
 END GPRegisterBankArch; -- GPRegisterBankArch

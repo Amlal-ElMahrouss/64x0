@@ -7,7 +7,7 @@ USE IEEE.std_logic_1164.ALL;
 
 ENTITY ClockCircuit IS
   PORT (
-    outgoing_cpu_clk : OUT STD_LOGIC
+    outgoing_cpu_clk : OUT STD_LOGIC := '0'
   );
 END ClockCircuit;
 

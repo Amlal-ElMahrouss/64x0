@@ -7,7 +7,7 @@ USE IEEE.std_logic_1164.ALL;
 
 ENTITY InstructionDecode IS
 	PORT (
-		cpu_clk : IN STD_LOGIC := '0';
+		cpu_clk : IN STD_LOGIC := '1';
 		cpu_data : IN STD_LOGIC_VECTOR(127 DOWNTO 0) := (OTHERS => '0');
 		cpu_opcode : OUT STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
 		cpu_funct3 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
@@ -34,6 +34,9 @@ BEGIN
 
 		cpu_reg_left <= cpu_data(24) & cpu_data(25) & cpu_data(26) & cpu_data(27) & cpu_data(28) &
 		cpu_data(29) & cpu_data(30) & cpu_data(31);
+
+		cpu_reg_right <= cpu_data(32) & cpu_data(33) & cpu_data(34) & cpu_data(35) & cpu_data(36) &
+		cpu_data(37) & cpu_data(38) & cpu_data(39);
 
 		REPORT "HT: DECODE: OPCODE: " & to_hstring(cpu_opcode) & ", FUNCT3: " & to_hstring(cpu_funct3) & ", FUNCT7: " & to_hstring(cpu_funct7) & ", RS: " & to_hstring(cpu_reg_left) & ", RD: " & to_hstring(cpu_reg_right) & ", OFF: " & to_hstring(cpu_offset);
 		WAIT ON cpu_clk;

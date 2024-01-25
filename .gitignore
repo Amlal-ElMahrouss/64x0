@@ -3,5 +3,6 @@
 *.fst
 *.fst.hier
 *.lck
+*.ghw
 64x0-backups/
 fp-info-cache
