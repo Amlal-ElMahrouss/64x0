@@ -1,5 +1,5 @@
 -- ( (c) El Mahrouss Logic 2024, all rights reserved. )
--- ( This file handles the General Purpose register bank. )
+-- ( This file handles the Register bank (GP). )
 
 LIBRARY IEEE;
 
@@ -20,109 +20,129 @@ ARCHITECTURE GPRegisterBankArch OF GPRegisterBank IS
 BEGIN
 
   HW_R0 : ENTITY work.GPRegister PORT MAP(
-    cpu_ingoing_data => (OTHERS => '0'),
-    cpu_ingoing_ident => 0,
+    cpu_ingoing_data => cpu_register_data,
+    cpu_ingoing_config => 0,
+    cpu_ingoing_id=>cpu_register_select,
     cpu_incoming_clk => cpu_clk);
    
   HW_R1 : ENTITY work.GPRegister PORT MAP(
-    cpu_ingoing_data => (OTHERS => '0'),
-    cpu_ingoing_ident => 1,
+    cpu_ingoing_data => cpu_register_data,
+    cpu_ingoing_config => 1,
+    cpu_ingoing_id=>cpu_register_select,
     cpu_incoming_clk => cpu_clk);
    
   HW_R2 : ENTITY work.GPRegister PORT MAP(
-    cpu_ingoing_data => (OTHERS => '0'),
-    cpu_ingoing_ident => 2,
+    cpu_ingoing_data => cpu_register_data,
+    cpu_ingoing_config => 2,
+    cpu_ingoing_id=>cpu_register_select,
     cpu_incoming_clk => cpu_clk);     
 
   HW_R3 : ENTITY work.GPRegister PORT MAP(
-      cpu_ingoing_data => (OTHERS => '0'),
-      cpu_ingoing_ident => 3,
+      cpu_ingoing_data => cpu_register_data,
+      cpu_ingoing_config => 3,
+      cpu_ingoing_id=>cpu_register_select,
       cpu_incoming_clk => cpu_clk);
 
   HW_R4 : ENTITY work.GPRegister PORT MAP(
-        cpu_ingoing_data => (OTHERS => '0'),
-        cpu_ingoing_ident => 4,
+        cpu_ingoing_data => cpu_register_data,
+        cpu_ingoing_config => 4,
+        cpu_ingoing_id=>cpu_register_select,
         cpu_incoming_clk => cpu_clk);
 
   HW_R5 : ENTITY work.GPRegister PORT MAP(
-    cpu_ingoing_data => (OTHERS => '0'),
-    cpu_ingoing_ident => 5,
+    cpu_ingoing_data => cpu_register_data,
+    cpu_ingoing_config => 5,
+    cpu_ingoing_id=>cpu_register_select,
     cpu_incoming_clk => cpu_clk);
 
   HW_R6 : ENTITY work.GPRegister PORT MAP(
-    cpu_ingoing_data => (OTHERS => '0'),
-    cpu_ingoing_ident => 6,
+    cpu_ingoing_data => cpu_register_data,
+    cpu_ingoing_config => 6,
+    cpu_ingoing_id=>cpu_register_select,
     cpu_incoming_clk => cpu_clk);
 
   HW_R7 : ENTITY work.GPRegister PORT MAP(
-    cpu_ingoing_data => (OTHERS => '0'),
-    cpu_ingoing_ident => 7,
+    cpu_ingoing_data => cpu_register_data,
+    cpu_ingoing_config => 7,
+    cpu_ingoing_id=>cpu_register_select,
     cpu_incoming_clk => cpu_clk);
 
   HW_R8 : ENTITY work.GPRegister PORT MAP(
-    cpu_ingoing_data => (OTHERS => '0'),
-    cpu_ingoing_ident => 8,
+    cpu_ingoing_data => cpu_register_data,
+    cpu_ingoing_config => 8,
+    cpu_ingoing_id=>cpu_register_select,
     cpu_incoming_clk => cpu_clk);
 
   HW_R9 : ENTITY work.GPRegister PORT MAP(
-    cpu_ingoing_data => (OTHERS => '0'),
-    cpu_ingoing_ident => 9,
+    cpu_ingoing_data => cpu_register_data,
+    cpu_ingoing_config => 9,
+    cpu_ingoing_id=>cpu_register_select,
     cpu_incoming_clk => cpu_clk);
     
   HW_R10 : ENTITY work.GPRegister PORT MAP(
-    cpu_ingoing_data => (OTHERS => '0'),
-    cpu_ingoing_ident => 10,
+    cpu_ingoing_data => cpu_register_data,
+    cpu_ingoing_config => 10,
+    cpu_ingoing_id=>cpu_register_select,
     cpu_incoming_clk => cpu_clk);
 
   HW_R11 : ENTITY work.GPRegister PORT MAP(
-    cpu_ingoing_data => (OTHERS => '0'),
-    cpu_ingoing_ident => 11,
+    cpu_ingoing_data => cpu_register_data,
+    cpu_ingoing_config => 11,
+    cpu_ingoing_id=>cpu_register_select,
     cpu_incoming_clk => cpu_clk);
 
   HW_R12 : ENTITY work.GPRegister PORT MAP(
-    cpu_ingoing_data => (OTHERS => '0'),
-    cpu_ingoing_ident => 12,
+    cpu_ingoing_data => cpu_register_data,
+    cpu_ingoing_config => 12,
+    cpu_ingoing_id=>cpu_register_select,
     cpu_incoming_clk => cpu_clk);
 
   HW_R13 : ENTITY work.GPRegister PORT MAP(
-    cpu_ingoing_data => (OTHERS => '0'),
-    cpu_ingoing_ident => 13,
+    cpu_ingoing_data => cpu_register_data,
+    cpu_ingoing_config => 13,
+    cpu_ingoing_id=>cpu_register_select,
     cpu_incoming_clk => cpu_clk);
 
   HW_R14 : ENTITY work.GPRegister PORT MAP(
-    cpu_ingoing_data => (OTHERS => '0'),
-    cpu_ingoing_ident => 14,
+    cpu_ingoing_data => cpu_register_data,
+    cpu_ingoing_config => 14,
+    cpu_ingoing_id=>cpu_register_select,
     cpu_incoming_clk => cpu_clk);
     
   HW_R15 : ENTITY work.GPRegister PORT MAP(
-    cpu_ingoing_data => (OTHERS => '0'),
-    cpu_ingoing_ident => 15,
+    cpu_ingoing_data => cpu_register_data,
+    cpu_ingoing_config => 15,
+    cpu_ingoing_id=>cpu_register_select,
     cpu_incoming_clk => cpu_clk);
 
   HW_R16 : ENTITY work.GPRegister PORT MAP(
-    cpu_ingoing_data => (OTHERS => '0'),
-    cpu_ingoing_ident => 16,
+    cpu_ingoing_data => cpu_register_data,
+    cpu_ingoing_config => 16,
+    cpu_ingoing_id=>cpu_register_select,
     cpu_incoming_clk => cpu_clk);
 
   HW_R17 : ENTITY work.GPRegister PORT MAP(
-    cpu_ingoing_data => (OTHERS => '0'),
-    cpu_ingoing_ident => 17,
+    cpu_ingoing_data => cpu_register_data,
+    cpu_ingoing_config => 17,
+    cpu_ingoing_id=>cpu_register_select,
     cpu_incoming_clk => cpu_clk);
     
   HW_R18 : ENTITY work.GPRegister PORT MAP(
-    cpu_ingoing_data => (OTHERS => '0'),
-    cpu_ingoing_ident => 18,
+    cpu_ingoing_data => cpu_register_data,
+    cpu_ingoing_config => 18,
     cpu_incoming_clk => cpu_clk);
     
   HW_R19 : ENTITY work.GPRegister PORT MAP(
-    cpu_ingoing_data => (OTHERS => '0'),
-    cpu_ingoing_ident => 19,
+    cpu_ingoing_data => cpu_register_data,
+    cpu_ingoing_config => 19,
+    cpu_ingoing_id=>cpu_register_select,
     cpu_incoming_clk => cpu_clk);
     
   GPRegisterBankLogic : PROCESS
   BEGIN
     IF (cpu_reset = '1') THEN
       REPORT "GPRB: RESET";
+      cpu_reset <= '0';
     END IF;
 
     WAIT ON cpu_clk;

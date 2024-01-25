@@ -1,5 +1,5 @@
 -- ( (c) El Mahrouss Logic 2024, all rights reserved. )
--- ( This file handles the General Purpose register. )
+-- ( This file handles the General Purpose register entity. )
 
 LIBRARY IEEE;
 
@@ -10,7 +10,8 @@ ENTITY GPRegister IS
 
     PORT (
         cpu_ingoing_data : IN STD_LOGIC_VECTOR(127 DOWNTO 0) := (OTHERS => '0');
-        cpu_ingoing_ident : IN NATURAL := 0;
+        cpu_ingoing_id : IN NATURAL := 0;
+        cpu_ingoing_config : IN NATURAL := 0;
         cpu_incoming_clk : IN STD_LOGIC := '1'
     );
 
@@ -29,13 +30,19 @@ BEGIN
     GPRegisterPro : PROCESS
     BEGIN
         IF (signal_reset = '1') THEN
-            signal_ident <= cpu_ingoing_ident;
+            signal_ident <= cpu_ingoing_config;
+            signal_reset <= '0';
         END IF;
 
-        IF (cpu_ingoing_ident = signal_ident) THEN
-            signal_data <= cpu_ingoing_data;
-
-            REPORT "GP: DATA: " & to_hstring(signal_data);
+        IF (cpu_ingoing_id = signal_ident) THEN
+            IF (signal_ident /= 0) THEN    
+                signal_data <= cpu_ingoing_data;
+                REPORT "GP: DATA: " & to_hstring(signal_data);
+                REPORT "GP: INCOMING_ID: " & integer'image(cpu_ingoing_config);
+                REPORT "GP: ID: " & integer'image(signal_ident);
+            ELSE
+                REPORT "GP: ZERO_REG";
+            END IF;
         END IF;
 
         WAIT ON cpu_incoming_clk;

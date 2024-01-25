@@ -1,5 +1,5 @@
 -- ( (c) El Mahrouss Logic 2024, all rights reserved. )
--- ( This file handles the General Purpose register. )
+-- ( This file handles the Floating point registers. )
 
 LIBRARY IEEE;
 
@@ -12,6 +12,7 @@ ENTITY FPRegister IS
         cpu_ingoing_mantissa : IN STD_LOGIC_VECTOR(57 DOWNTO 0) := (OTHERS => '0');
         cpu_ingoing_exponent : IN STD_LOGIC_VECTOR(27 DOWNTO 0) := (OTHERS => '0');
         cpu_ingoing_sign : IN STD_LOGIC := '0';
+        cpu_ingoing_config : IN NATURAL := 0;
         cpu_ingoing_ident : IN NATURAL := 0;
         cpu_incoming_clk : IN STD_LOGIC := '1'
     );
@@ -33,7 +34,7 @@ BEGIN
     FPRegisterPro : PROCESS
     BEGIN
         IF (signal_reset = '1') THEN
-            signal_ident <= cpu_ingoing_ident;
+            signal_ident <= cpu_ingoing_config;
         END IF;
 
         IF (cpu_ingoing_ident = signal_ident) THEN
