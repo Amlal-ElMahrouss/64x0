@@ -1,5 +1,7 @@
-# If you don't need to patch ghdl, use export ghdlp=ghdl
-# Use ghdl -r module, to simulate.
+##################################################
+# (C) Mahrouss Logic, 2024, all rights reserved.
+# This is the RTL makefile.
+##################################################
 
 VHDL_FLAG=-a --work=RTL --std=08 --ieee=synopsys
 VHDL_CC=ghdl
