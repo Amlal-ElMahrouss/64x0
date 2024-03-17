@@ -20,9 +20,11 @@ BEGIN
   ClockPro : PROCESS
   BEGIN
     cpu_clk <= NOT cpu_clk;
-    WAIT FOR 100 ns;
-    outgoing_cpu_clk <= cpu_clk;
 
+    WAIT FOR 100 ns;
+    
+    outgoing_cpu_clk <= cpu_clk;
+    
     IF (cpu_clk = '1') THEN
       REPORT "HT: RISE";
     ELSE
