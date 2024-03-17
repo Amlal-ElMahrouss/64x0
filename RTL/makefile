@@ -2,7 +2,7 @@
 # Use ghdl -r module, to simulate.
 
 VHDL_FLAG=-a --work=RTL --std=08 --ieee=synopsys
-VHDL_CC=$(ghdlp)
+VHDL_CC=ghdl
 
 .PHONY: all-vhdl
 all-vhdl:
