@@ -14,7 +14,8 @@ ENTITY FPRegister IS
         cpu_ingoing_sign : IN STD_LOGIC := '0';
         cpu_ingoing_config : IN NATURAL := 0;
         cpu_ingoing_ident : IN NATURAL := 0;
-        cpu_incoming_clk : IN STD_LOGIC := '1'
+        cpu_incoming_clk : IN STD_LOGIC := '1';
+        cpu_ingoing_mag : IN STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0')
     );
 
 END FPRegister;
@@ -37,7 +38,7 @@ BEGIN
             signal_ident <= cpu_ingoing_config;
         END IF;
 
-        IF (cpu_ingoing_ident = signal_ident) THEN
+        IF (cpu_ingoing_ident = signal_ident AND cpu_ingoing_mag = X"23") THEN
             signal_mantissa <= cpu_ingoing_mantissa;
             signal_exponent <= cpu_ingoing_exponent;
             signal_sign <= cpu_ingoing_sign;
