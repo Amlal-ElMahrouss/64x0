@@ -1,4 +1,4 @@
--- ( (c) El Mahrouss Logic 2024, all rights reserved. )
+-- ( (c) Mahrouss-Logic 2024, all rights reserved. )
 -- ( This file handles the Floating point registers. )
 
 LIBRARY IEEE;
@@ -42,7 +42,7 @@ BEGIN
             signal_exponent <= cpu_ingoing_exponent;
             signal_sign <= cpu_ingoing_sign;
 
-            REPORT "GP: DATA: " & to_hstring(signal_exponent) & "." & to_hstring(signal_mantissa);
+            REPORT "GP: DATA: 0x" & to_hstring(signal_exponent) & "." & to_hstring(signal_mantissa);
         END IF;
 
         WAIT ON cpu_incoming_clk;

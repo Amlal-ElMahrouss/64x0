@@ -1,4 +1,4 @@
--- ( (c) El Mahrouss Logic 2024, all rights reserved. )
+-- ( (c) Mahrouss-Logic 2024, all rights reserved. )
 -- ( This file handles the General Purpose register entity. )
 
 LIBRARY IEEE;
@@ -37,7 +37,7 @@ BEGIN
         IF (cpu_ingoing_id = signal_ident) THEN
             IF (signal_ident /= 0) THEN    
                 signal_data <= cpu_ingoing_data;
-                REPORT "GP: DATA: " & to_hstring(signal_data);
+                REPORT "GP: DATA: 0x" & to_hstring(signal_data);
                 REPORT "GP: INCOMING_ID: " & integer'image(cpu_ingoing_config);
                 REPORT "GP: ID: " & integer'image(signal_ident);
             ELSE

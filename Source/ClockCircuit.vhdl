@@ -1,4 +1,4 @@
--- ( (c) El Mahrouss Logic 2024, all rights reserved. )
+-- ( (c) Mahrouss-Logic 2024, all rights reserved. )
 -- ( This file handles the circuit's clock. )
 
 LIBRARY IEEE;
@@ -21,11 +21,11 @@ BEGIN
   BEGIN
     cpu_clk <= NOT cpu_clk;
 
-    WAIT FOR 100 ns;
+    WAIT FOR 60 ns;
     
     outgoing_cpu_clk <= cpu_clk;
     
-    IF (cpu_clk = '1') THEN
+    IF (RISING_EDGE(cpu_clk)) THEN
       REPORT "HT: RISE";
     ELSE
       REPORT "HT: DOWN";

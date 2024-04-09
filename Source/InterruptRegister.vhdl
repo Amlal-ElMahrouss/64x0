@@ -1,4 +1,4 @@
--- ( (c) El Mahrouss Logic 2024, all rights reserved. )
+-- ( (c) Mahrouss-Logic 2024, all rights reserved. )
 -- ( This file handles the Interrupt Register. )
 
 LIBRARY IEEE;

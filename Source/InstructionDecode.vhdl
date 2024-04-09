@@ -1,14 +1,15 @@
--- ( (c) El Mahrouss Logic 2024, all rights reserved. )
+-- ( (c) Mahrouss-Logic 2024, all rights reserved. )
 -- ( This file handles the decode stage. )
 
 LIBRARY IEEE;
 
 USE IEEE.std_logic_1164.ALL;
+USE IEEE.numeric_std.ALL;
 
 ENTITY InstructionDecode IS
 	PORT (
 		cpu_clk : IN STD_LOGIC := '1';
-		cpu_data : IN STD_LOGIC_VECTOR(127 DOWNTO 0) := (OTHERS => '0');
+		cpu_data : IN STD_LOGIC_VECTOR(0 TO 127) := (OTHERS => '0');
 		cpu_opcode : OUT STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
 		cpu_funct3 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
 		cpu_funct7 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
@@ -23,20 +24,20 @@ BEGIN
 
 	InstructionDecodePro : PROCESS
 	BEGIN
-		cpu_opcode <= cpu_data(0) & cpu_data(1) & cpu_data(2) & cpu_data(3) & cpu_data(4) &
-			cpu_data(5) & cpu_data(6) & cpu_data(7);
+		cpu_reg_right <= cpu_data(95) & cpu_data(94) & cpu_data(93) & cpu_data(92) & cpu_data(91) &
+			cpu_data(90) & cpu_data(89) & cpu_data(88);
 
-		cpu_funct3 <= cpu_data(8) & cpu_data(9) & cpu_data(10) & cpu_data(11) & cpu_data(12) &
-			cpu_data(13) & cpu_data(14) & cpu_data(15);
+		cpu_reg_left <= cpu_data(103) & cpu_data(102) & cpu_data(101) & cpu_data(100) & cpu_data(99) &
+			cpu_data(98) & cpu_data(97) & cpu_data(96);
 
-		cpu_funct7 <= cpu_data(16) & cpu_data(17) & cpu_data(18) & cpu_data(19) & cpu_data(20) &
-			cpu_data(21) & cpu_data(22) & cpu_data(23);
+		cpu_funct7 <= cpu_data(111) & cpu_data(110) & cpu_data(109) & cpu_data(108) & cpu_data(107) &
+			cpu_data(106) & cpu_data(105) & cpu_data(104);
 
-		cpu_reg_left <= cpu_data(24) & cpu_data(25) & cpu_data(26) & cpu_data(27) & cpu_data(28) &
-		cpu_data(29) & cpu_data(30) & cpu_data(31);
+		cpu_funct3 <= cpu_data(119) & cpu_data(118) & cpu_data(117) & cpu_data(116) & cpu_data(115) &
+		cpu_data(114) & cpu_data(113) & cpu_data(112);
 
-		cpu_reg_right <= cpu_data(32) & cpu_data(33) & cpu_data(34) & cpu_data(35) & cpu_data(36) &
-		cpu_data(37) & cpu_data(38) & cpu_data(39);
+		cpu_opcode <= cpu_data(127) & cpu_data(126) & cpu_data(125) & cpu_data(124) & cpu_data(123) &
+		cpu_data(122) & cpu_data(121) & cpu_data(120);
 
 		REPORT "HT: DECODE: OPCODE: " & to_hstring(cpu_opcode) & ", FUNCT3: " & to_hstring(cpu_funct3) & ", FUNCT7: " & to_hstring(cpu_funct7) & ", RS: " & to_hstring(cpu_reg_left) & ", RD: " & to_hstring(cpu_reg_right) & ", OFF: " & to_hstring(cpu_offset);
 		WAIT ON cpu_clk;

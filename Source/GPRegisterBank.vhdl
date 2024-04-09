@@ -1,4 +1,4 @@
--- ( (c) El Mahrouss Logic 2024, all rights reserved. )
+-- ( (c) Mahrouss-Logic 2024, all rights reserved. )
 -- ( This file handles the Register bank (GP). )
 
 LIBRARY IEEE;
@@ -137,6 +137,7 @@ BEGIN
     cpu_ingoing_config => 19,
     cpu_ingoing_id=>cpu_register_select,
     cpu_incoming_clk => cpu_clk);
-    
+
+  -- End of register banks.
 
 END GPRegisterBankArch; -- GPRegisterBankArch

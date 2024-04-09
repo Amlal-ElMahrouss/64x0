@@ -6,3 +6,6 @@
 *.ghw
 64x0-backups/
 fp-info-cache
+
+# Assembler output.
+*.obj
