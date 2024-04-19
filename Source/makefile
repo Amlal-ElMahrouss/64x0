@@ -4,7 +4,7 @@
 ##################################################
 
 VHDL_FLAG=-a --work=RTL --std=08 --ieee=synopsys
-VHDL_CC=ghdl
+VHDL_CC=$(GHDL_PATH)
 
 .PHONY: all
 all:
