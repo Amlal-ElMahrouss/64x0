@@ -1,5 +1,5 @@
 -- ( (c) Mahrouss-Logic 2024, all rights reserved. )
--- ( This file handles the fetch stage. )
+-- ( This file handles the instruction fetch stage. )
 
 LIBRARY IEEE;
 

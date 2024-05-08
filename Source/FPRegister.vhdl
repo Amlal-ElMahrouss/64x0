@@ -1,5 +1,5 @@
 -- ( (c) Mahrouss-Logic 2024, all rights reserved. )
--- ( This file handles the Floating point registers. )
+-- ( This file handles the floating point registers. )
 
 LIBRARY IEEE;
 

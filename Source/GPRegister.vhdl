@@ -1,5 +1,5 @@
 -- ( (c) Mahrouss-Logic 2024, all rights reserved. )
--- ( This file handles the General Purpose register entity. )
+-- ( This file handles the general purpose register entity. )
 
 LIBRARY IEEE;
 

@@ -1,5 +1,5 @@
 -- ( (c) Mahrouss-Logic 2024, all rights reserved. )
--- ( This file handles the Register bank for floating point registers. (FP). )
+-- ( This file handles the register bank for floating point registers. (FP). )
 
 LIBRARY IEEE;
 

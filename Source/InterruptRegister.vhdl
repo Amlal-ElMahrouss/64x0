@@ -1,5 +1,5 @@
 -- ( (c) Mahrouss-Logic 2024, all rights reserved. )
--- ( This file handles the Interrupt Register. )
+-- ( This file handles the interrupt register. )
 
 LIBRARY IEEE;
 
