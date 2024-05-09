@@ -1,4 +1,4 @@
--- ( (c) Mahrouss-Logic 2024, all rights reserved. )
+-- ( (c) SoftwareLabs, all rights reserved. )
 -- ( This file handles the general purpose register entity. )
 
 LIBRARY IEEE;
