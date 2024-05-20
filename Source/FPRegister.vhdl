@@ -23,11 +23,15 @@ END FPRegister;
 -- Interrupt unit body.
 ARCHITECTURE FPRegisterArch OF FPRegister IS
 
-    -- Standard IRQ
+    -- Standard mantissa.
     SIGNAL signal_mantissa : STD_LOGIC_VECTOR(57 DOWNTO 0) := (OTHERS => '0');
+    -- Standard exponent.
     SIGNAL signal_exponent : STD_LOGIC_VECTOR(27 DOWNTO 0) := (OTHERS => '0');
+    -- Sign bit.
     SIGNAL signal_sign : STD_LOGIC := '0';
+    -- Circuit reset.
     SIGNAL signal_reset : STD_LOGIC := '1';
+    -- Needed to tell which register we want to store the value.
     SIGNAL signal_ident : NATURAL := 0;
 
 BEGIN
