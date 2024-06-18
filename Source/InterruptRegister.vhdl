@@ -1,4 +1,4 @@
--- ( (c) SoftwareLabs, all rights reserved. )
+-- ( (c) Zeta Electronics Corp, all rights reserved. )
 -- ( This file handles the interrupt register. )
 
 LIBRARY IEEE;

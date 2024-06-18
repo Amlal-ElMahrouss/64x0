@@ -1,4 +1,4 @@
--- ( (c) SoftwareLabs, all rights reserved. )
+-- ( (c) Zeta Electronics Corp, all rights reserved. )
 -- ( This file handles the register bank for floating point registers. (FP). )
 
 LIBRARY IEEE;
