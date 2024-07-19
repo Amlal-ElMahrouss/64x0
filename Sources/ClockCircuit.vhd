@@ -1,4 +1,4 @@
--- ( (c) Zeta Electronics Corp, all rights reserved. )
+-- ( (c) ZKA Technologies, all rights reserved. )
 -- ( This file handles the circuit's clock. )
 
 LIBRARY IEEE;
@@ -22,9 +22,9 @@ BEGIN
     cpu_clk <= NOT cpu_clk;
 
     WAIT FOR 60 ns;
-    
+
     outgoing_cpu_clk <= cpu_clk;
-    
+
     IF (RISING_EDGE(cpu_clk)) THEN
       REPORT "HT: RISE";
     ELSE

@@ -1,4 +1,4 @@
--- ( (c) Zeta Electronics Corp, all rights reserved. )
+-- ( (c) ZKA Technologies, all rights reserved. )
 -- ( This file handles the decode stage. )
 
 LIBRARY IEEE;

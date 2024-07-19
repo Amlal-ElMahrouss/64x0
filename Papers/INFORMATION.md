@@ -6,5 +6,7 @@
 - 128-bit data-path.
 - Paged memory model.
 - Out of order execution.
-- Memory I/O support.
-- Load/Store.
+- Load/Store architecture.
+- 6 stage pipeline.
+- RISC
+- MicroCode

@@ -1,4 +1,4 @@
--- ( (c) Zeta Electronics Corp, all rights reserved. )
+-- ( (c) ZKA Technologies, all rights reserved. )
 -- ( This file handles the general purpose register entity. )
 
 LIBRARY IEEE;
@@ -36,7 +36,7 @@ BEGIN
         END IF;
 
         IF (cpu_ingoing_id = signal_ident AND cpu_ingoing_mag = X"23") THEN
-            IF (signal_ident /= 0) THEN    
+            IF (signal_ident /= 0) THEN
                 signal_data <= cpu_ingoing_data;
                 REPORT "GP: DATA: 0x" & to_hstring(signal_data);
                 REPORT "GP: ID DST: " & integer'image(signal_ident);

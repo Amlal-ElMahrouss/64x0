@@ -1,4 +1,4 @@
--- ( (c) Zeta Electronics Corp, all rights reserved. )
+-- ( (c) ZKA Technologies, all rights reserved. )
 -- ( This file handles the register bank for floating point registers. (FP). )
 
 LIBRARY IEEE;
@@ -19,5 +19,5 @@ ARCHITECTURE FPRegisterBankArch OF FPRegisterBank IS
 BEGIN
 
 
-    
+
 END FPRegisterBankArch; -- FPRegisterBankArch

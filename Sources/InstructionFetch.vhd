@@ -1,4 +1,4 @@
--- ( (c) Zeta Electronics Corp, all rights reserved. )
+-- ( (c) ZKA Technologies, all rights reserved. )
 -- ( This file handles the instruction fetch stage. )
 
 LIBRARY IEEE;
@@ -30,11 +30,11 @@ BEGIN
 
     PROCESS
         FILE ROM : IntFile;
-        
+
         VARIABLE v_cpu_logic_data : STD_LOGIC_VECTOR(31 DOWNTO 0) := (OTHERS => '0');
         VARIABLE v_cpu_data : INTEGER := 0;
     BEGIN
-        FILE_OPEN(ROM, "../ROM/ROM.obj", read_mode);
+        FILE_OPEN(ROM, "../MicroCode/Sources/ROM.bin", read_mode);
 
         WHILE NOT ENDFILE(ROM) LOOP
             WHILE (cpu_clk_s = '1') LOOP
@@ -45,7 +45,7 @@ BEGIN
 
             READ(ROM, v_cpu_data);
 
-            report "ROM: 0x" & to_hstring(to_signed(v_cpu_data, 32));
+            REPORT "ROM: 0x" & to_hstring(to_signed(v_cpu_data, 32));
 
             v_cpu_logic_data := STD_LOGIC_VECTOR(TO_SIGNED(v_cpu_data, 32));
 

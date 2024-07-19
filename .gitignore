@@ -8,4 +8,4 @@
 fp-info-cache
 
 # Assembler output.
-*.obj
+*.bin

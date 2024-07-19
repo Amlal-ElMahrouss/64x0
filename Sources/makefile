@@ -10,19 +10,19 @@ ifeq ($(shell uname), Darwin)
 VHDL_CC=$(GHDL_PATH)
 else
 VHDL_CC=ghdl
-endif 
+endif
 
 .PHONY: all
 all:
-	$(VHDL_CC) $(VHDL_FLAG) InstructionDecode.vhdl
-	$(VHDL_CC) $(VHDL_FLAG) FPRegister.vhdl
-	$(VHDL_CC) $(VHDL_FLAG) GPRegister.vhdl
-	$(VHDL_CC) $(VHDL_FLAG) GPRegisterBank.vhdl
-	$(VHDL_CC) $(VHDL_FLAG) FPRegisterBank.vhdl
-	$(VHDL_CC) $(VHDL_FLAG) InterruptRegister.vhdl
-	$(VHDL_CC) $(VHDL_FLAG) ThreadRegister.vhdl
-	$(VHDL_CC) $(VHDL_FLAG) ClockCircuit.vhdl
-	$(VHDL_CC) $(VHDL_FLAG) InstructionFetch.vhdl
+	$(VHDL_CC) $(VHDL_FLAG) InstructionDecode.vhd
+	$(VHDL_CC) $(VHDL_FLAG) FPRegister.vhd
+	$(VHDL_CC) $(VHDL_FLAG) GPRegister.vhd
+	$(VHDL_CC) $(VHDL_FLAG) GPRegisterBank.vhd
+	$(VHDL_CC) $(VHDL_FLAG) FPRegisterBank.vhd
+	$(VHDL_CC) $(VHDL_FLAG) InterruptRegister.vhd
+	$(VHDL_CC) $(VHDL_FLAG) ThreadRegister.vhd
+	$(VHDL_CC) $(VHDL_FLAG) ClockCircuit.vhd
+	$(VHDL_CC) $(VHDL_FLAG) InstructionFetch.vhd
 	$(VHDL_CC) $(VCD_FLAG) RTL.InstructionFetch --vcd=InstructionFetch.vcd
 
 .PHONY: help

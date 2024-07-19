@@ -1,4 +1,4 @@
--- ( (c) Zeta Electronics Corp, all rights reserved. )
+-- ( (c) ZKA Technologies, all rights reserved. )
 -- ( This file handles the Register bank (GP). )
 
 LIBRARY IEEE;
@@ -27,20 +27,20 @@ BEGIN
     cpu_incoming_clk => cpu_clk,
     cpu_ingoing_mag => cpu_register_ident
     );
-   
+
   HW_R1 : ENTITY work.GPRegister PORT MAP(
     cpu_ingoing_data => cpu_register_data,
     cpu_ingoing_config => 1,
     cpu_ingoing_id=>cpu_register_select,
     cpu_incoming_clk => cpu_clk,
     cpu_ingoing_mag => cpu_register_ident);
-   
+
   HW_R2 : ENTITY work.GPRegister PORT MAP(
     cpu_ingoing_data => cpu_register_data,
     cpu_ingoing_config => 2,
     cpu_ingoing_id=>cpu_register_select,
     cpu_incoming_clk => cpu_clk,
-    cpu_ingoing_mag => cpu_register_ident);     
+    cpu_ingoing_mag => cpu_register_ident);
 
   HW_R3 : ENTITY work.GPRegister PORT MAP(
       cpu_ingoing_data => cpu_register_data,
@@ -90,7 +90,7 @@ BEGIN
     cpu_ingoing_id=>cpu_register_select,
     cpu_incoming_clk => cpu_clk,
     cpu_ingoing_mag => cpu_register_ident);
-    
+
   HW_R10 : ENTITY work.GPRegister PORT MAP(
     cpu_ingoing_data => cpu_register_data,
     cpu_ingoing_config => 10,
@@ -125,7 +125,7 @@ BEGIN
     cpu_ingoing_id=>cpu_register_select,
     cpu_incoming_clk => cpu_clk,
     cpu_ingoing_mag => cpu_register_ident);
-    
+
   HW_R15 : ENTITY work.GPRegister PORT MAP(
     cpu_ingoing_data => cpu_register_data,
     cpu_ingoing_config => 15,
@@ -146,13 +146,13 @@ BEGIN
     cpu_ingoing_id=>cpu_register_select,
     cpu_incoming_clk => cpu_clk,
     cpu_ingoing_mag => cpu_register_ident);
-    
+
   HW_R18 : ENTITY work.GPRegister PORT MAP(
     cpu_ingoing_data => cpu_register_data,
     cpu_ingoing_config => 18,
     cpu_incoming_clk => cpu_clk,
     cpu_ingoing_mag => cpu_register_ident);
-    
+
   HW_R19 : ENTITY work.GPRegister PORT MAP(
     cpu_ingoing_data => cpu_register_data,
     cpu_ingoing_config => 19,
