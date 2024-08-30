@@ -25,7 +25,7 @@ BEGIN
 
     outgoing_cpu_clk <= cpu_clk;
 
-    IF (RISING_EDGE(cpu_clk)) THEN
+    IF (cpu_clk) THEN
       REPORT "HT: RISE";
     ELSE
       REPORT "HT: DOWN";
