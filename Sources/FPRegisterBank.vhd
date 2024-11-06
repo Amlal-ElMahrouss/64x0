@@ -1,4 +1,4 @@
--- ( (c) ZKA Technologies, all rights reserved. )
+-- ( (c) Amlal EL Mahrouss, all rights reserved. )
 -- ( This file handles the register bank for floating point registers. (FP). )
 
 LIBRARY IEEE;
